@@ -1,0 +1,34 @@
+server:
+  port: 9000
+logging:
+  level:
+    root: info
+    org.hibernate: INFO
+spring:
+  application:
+    name: spring-cloud-examples-user-coursumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7878/eureka
+  instance:
+    prefer-ip-address: true
+
+####### 配置 ribbon 使用直连的方式 ######
+### 1、首先禁用 eureka 2、配置 provider 的服务提供者IP
+#ribbon:
+#  eureka:
+#    enabled: false
+#
+#spring-cloud-simple-examples-provider:  # provider name
+#  ribbon:
+#    listOfServers: 127.0.0.1:8000
+###########  end #############
+
+
+
+##### 配置方式设置 ribbon 负载均衡算法
+#spring-cloud-simple-examples-provider:  # provider name
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+###### end ########

@@ -1,0 +1,57 @@
+server:
+  port: 9001
+  compression:
+    enabled: true
+    mime-types: text/xml,text/html,application/xml,application/json,application/xhtml+xml
+  connection-timeout: 5000
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    com.qfang.examples.spring.cloud.consumer.biz.remote.user.UserRemote: debug
+spring:
+  application:
+    name: spring-cloud-examples-user-coursumer-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7878/eureka
+  instance:
+    prefer-ip-address: true
+
+feign:
+  httpclient:
+    enabled: true  # 启用 feign http client 支持，使用连接池提升性能
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 1024
+    reponse:
+      enabled: true
+
+####### 配置 ribbon 使用直连的方式 ######
+### 1、首先禁用 eureka 2、配置 provider 的服务提供者IP
+ribbon:
+  eureka:
+    enabled: false
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+
+spring-cloud-examples-user-provider:  # provider name
+  ribbon:
+    listOfServers: 127.0.0.1:8000,127.0.0.1:8001
+    ConnectTimeout: 3000  # 请求链接超时时间
+    ReadTimeout: 5000  # 请求处理超时时间
+    OkToRetryOnAllOperations: true # 对所有操作请求进行重试
+    MaxAutoRetriesNextServer: 1  # 切换实例重试次数
+    MaxAutoRetries: 2  # 对当前实例重试次数
+###########  end #############
+
+
+##### 配置方式设置 ribbon 负载均衡算法
+#spring-cloud-simple-examples-provider:  # provider name
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+###### end ########

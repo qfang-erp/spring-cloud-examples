@@ -1,0 +1,17 @@
+server:
+  port: 9001
+
+logging:
+  level:
+    root: info
+    org.hibernate: INFO
+    com.qfang.examples.spring.cloud.consumer.biz.remote.user.UserRemote: debug
+spring:
+  application:
+    name: spring-cloud-examples-user-coursumer-hystrix-fallback
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:7878/eureka
+  instance:
+    prefer-ip-address: true
