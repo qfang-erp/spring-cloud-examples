@@ -24,6 +24,11 @@ public class UserController implements UserFacade {
 
     @Override
     public List<User> listUser() {
+        try {
+            Thread.sleep(8000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return userService.listUser();
     }
 
