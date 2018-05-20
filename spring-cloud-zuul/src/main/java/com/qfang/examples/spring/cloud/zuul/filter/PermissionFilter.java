@@ -1,4 +1,4 @@
-package com.qfang.examples.spring.cloud.eureka.filter;
+package com.qfang.examples.spring.cloud.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;

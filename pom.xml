@@ -11,6 +11,7 @@
     <modules>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-zuul</module>
+        <module>spring-cloud-config-server</module>
         <module>spring-cloud-user-provider-api</module>
         <module>spring-cloud-user-provider</module>
         <module>spring-cloud-user-provider-slave</module>

@@ -1,4 +1,4 @@
-package com.qfang.examples.spring.cloud.eureka;
+package com.qfang.examples.spring.cloud.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

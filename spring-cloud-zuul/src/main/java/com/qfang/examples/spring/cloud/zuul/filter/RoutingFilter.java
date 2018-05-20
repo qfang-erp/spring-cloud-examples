@@ -1,12 +1,9 @@
-package com.qfang.examples.spring.cloud.eureka.filter;
+package com.qfang.examples.spring.cloud.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author: liaozhicheng.cn@163.com
@@ -14,18 +11,18 @@ import javax.servlet.http.HttpServletRequest;
  * @since: 1.0
  */
 @Component
-public class LogFilter extends ZuulFilter {
+public class RoutingFilter extends ZuulFilter {
 
     private static final Logger LOG = LoggerFactory.getLogger(LogFilter.class);
 
     @Override
     public String filterType() {
-        return "pre";
+        return "route";
     }
 
     @Override
     public int filterOrder() {
-        return 0;
+        return 3;
     }
 
     @Override
@@ -35,10 +32,8 @@ public class LogFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-        RequestContext rq = RequestContext.getCurrentContext();
-        HttpServletRequest request = rq.getRequest();
-        LOG.info("------------ pre filter: order=1 ----------");
-        LOG.info("request info, method: {}, url: {}", request.getMethod(), request.getRequestURL().toString());
+        LOG.info("------------ routing filter ----------");
+
         return null;
     }
 }

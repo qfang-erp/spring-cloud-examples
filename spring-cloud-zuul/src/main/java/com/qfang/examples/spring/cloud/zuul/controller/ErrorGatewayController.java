@@ -1,4 +1,4 @@
-package com.qfang.examples.spring.cloud.eureka.controller;
+package com.qfang.examples.spring.cloud.zuul.controller;
 
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
