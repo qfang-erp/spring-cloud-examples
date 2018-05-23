@@ -3,6 +3,7 @@ package com.qfang.examples.spring.cloud.eureka;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * @author: liaozhicheng.cn@163.com
@@ -11,6 +12,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  */
 @SpringBootApplication
 @EnableEurekaServer
+@EnableZuulProxy
 public class EurekaApplication {
 
     public static void main(String[] args) {

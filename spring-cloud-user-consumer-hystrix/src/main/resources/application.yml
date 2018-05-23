@@ -21,6 +21,7 @@ feign:
   hystrix:
     enabled: true
 
+
 #---------------------------------------turbine--------------------------
 # 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
 
