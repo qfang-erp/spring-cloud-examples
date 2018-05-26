@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 9000
 spring:
   application:
       name: spring-cloud-examples-user-provider

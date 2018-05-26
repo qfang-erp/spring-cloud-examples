@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2018-05-21
  * @since: 1.0
  */
-@RestController
+//@RestController
 public class ConfigTestController {
 
     @Value("${adminName}")

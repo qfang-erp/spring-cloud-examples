@@ -16,7 +16,7 @@ import java.util.List;
  * @since: 1.0
  */
 @FeignClient(name = "spring-cloud-examples-user-provider", configuration = FeignLogConfiguration.class)
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public interface UserFacade {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)

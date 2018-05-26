@@ -12,10 +12,3 @@ eureka:
 spring:
   application:
     name: spring-cloud-eureka
-
-################ zuul 路由配置 ####################
-zuul:
-  prefix: /api
-  routes:
-    spring-cloud-examples-user-provider:
-      path: /user/**  # 将路径的 /user/ 引到 eureka 的 spring-cloud-examples-user-provider 服务上
