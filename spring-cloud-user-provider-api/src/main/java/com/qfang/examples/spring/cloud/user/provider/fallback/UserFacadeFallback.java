@@ -23,6 +23,11 @@ public class UserFacadeFallback implements UserFacade {
     }
 
     @Override
+    public User findByUsername(String username) {
+        return new User(-1L, "fallback");
+    }
+
+    @Override
     public boolean saveUser(User user) {
         return false;
     }

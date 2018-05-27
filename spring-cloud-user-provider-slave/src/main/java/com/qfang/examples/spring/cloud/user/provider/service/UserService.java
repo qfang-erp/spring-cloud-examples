@@ -27,6 +27,10 @@ public class UserService {
         return this.userRepository.findOne(id);
     }
 
+    public User findByUsername(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
     @Transactional
     public boolean saveUser(User user) {
         this.userRepository.save(user);

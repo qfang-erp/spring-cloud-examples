@@ -3,6 +3,7 @@ package com.qfang.examples.spring.cloud.user.provider.service;
 import com.qfang.examples.spring.cloud.user.provider.dao.UserRepository;
 import com.qfang.examples.spring.cloud.user.provider.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -25,6 +26,10 @@ public class UserService {
 
     public User findById(long id) {
         return this.userRepository.findOne(id);
+    }
+
+    public User findByUsername(String username) {
+        return this.userRepository.findByUsername(username);
     }
 
     @Transactional

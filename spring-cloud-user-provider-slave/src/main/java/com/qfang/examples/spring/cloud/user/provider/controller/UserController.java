@@ -6,7 +6,7 @@ import com.qfang.examples.spring.cloud.user.provider.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -17,7 +17,6 @@ import java.util.List;
  * @since: 1.0
  */
 @RestController
-@RequestMapping("/user")
 public class UserController implements UserFacade {
     @Autowired
     private UserService userService;
@@ -30,6 +29,11 @@ public class UserController implements UserFacade {
     public User findById(@PathVariable("id") long id) {
         System.out.println("### slave master #####");
         return userService.findById(id);
+    }
+
+    @Override
+    public User findByUsername(@RequestParam("username") String username) {
+        return userService.findByUsername(username);
     }
 
     @Override
