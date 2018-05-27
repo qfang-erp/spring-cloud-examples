@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>spring-cloud-eureka</module>
-        <module>spring-cloud-zuul</module>
+        <module>spring-cloud-eureka-server</module>
+        <module>spring-cloud-zuul-server</module>
         <module>spring-cloud-config-server</module>
+        <module>spring-cloud-licensing-server</module>
         <module>spring-cloud-user-provider-api</module>
         <module>spring-cloud-user-provider</module>
         <module>spring-cloud-user-provider-slave</module>

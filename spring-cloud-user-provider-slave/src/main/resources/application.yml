@@ -19,7 +19,7 @@ logging:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:7878/eureka
+      defaultZone: http://127.0.0.1:7818/eureka
   instance:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 5  # 每间隔5s，向服务端发送一次心跳，证明自己依然”存活“

@@ -1,14 +1,14 @@
 server:
-  port: 7878
+  port: 7818
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://127.0.0.1:7878/eureka
+      defaultZone: http://127.0.0.1:7818/eureka
   server:
     enable-self-preservation: false # 测试时关闭自我保护机制，保证不可用服务及时踢出
 
 spring:
   application:
-    name: spring-cloud-eureka
+    name: spring-cloud-eureka-server
